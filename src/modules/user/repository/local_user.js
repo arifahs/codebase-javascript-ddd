@@ -1,24 +1,23 @@
 class localUserRepository {
   constructor() {
-    
+
   }
 
   async fetch() {
     const users = [
       {
-        name: "hafiz"
+        name: 'hafiz',
       },
       {
-        name: "jondes"
+        name: 'jondes',
       },
       {
-        name: "syafie"
-      }
+        name: 'syafie',
+      },
     ]
 
     return users
   }
-
 }
 
 export default localUserRepository

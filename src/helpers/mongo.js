@@ -1,6 +1,6 @@
 class Mongo {
   /**
-   * 
+   *
    * @param {Object} mongoose is mongoose lib
    * @param {String} mongoUri is mongo url
    */

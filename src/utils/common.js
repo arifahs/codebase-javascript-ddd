@@ -48,5 +48,5 @@ export {
   restParamBuilder,
   mgoSortBuilder,
   isObjectId,
-  ObjectId
+  ObjectId,
 }

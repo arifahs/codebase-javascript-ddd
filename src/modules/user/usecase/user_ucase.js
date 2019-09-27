@@ -1,4 +1,4 @@
-import _error from "../../../utils/error"
+import _error from '../../../utils/error'
 
 class usersUsecase {
   constructor(params) {
@@ -11,13 +11,12 @@ class usersUsecase {
 
   async makeError() {
     throw new _error.New(
-      _error.message.duplicate,
-      {
-        foo: "some detail"
-      }
+        _error.message.duplicate,
+        {
+          foo: 'some detail',
+        }
     )
   }
-
 }
 
 export default usersUsecase

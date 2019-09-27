@@ -3,7 +3,6 @@ import _express from 'express'
 import bodyParser from 'body-parser'
 import {hashElement} from 'folder-hash'
 import logger from './utils/logger'
-import _gqlServer from './middleware/gql_server'
 import hashOptions from './utils/hash_options'
 
 // repository
@@ -22,7 +21,7 @@ class Main {
 
   async initBefore() {
     try {
-      //some init before
+      // some init before
     } catch (e) {
       logger('error', 'main-initBefore', 'error init before', e)
       process.exit()
@@ -31,7 +30,7 @@ class Main {
 
   async main() {
     try {
-      //initBefore
+      // initBefore
       await this.initBefore()
 
       const currentHash = await hashElement('./src', hashOptions)
@@ -46,27 +45,27 @@ class Main {
 
       // usecase
       const userUsecase = new UserUsecase({
-        layer: { 
-          repo: { userRepository },
+        layer: {
+          repo: {userRepository},
           ucase: {},
-          delivery: {}
+          delivery: {},
         },
         dep: {},
-        data: {}
-      })
-  
-      // delivery rest http
-      new UserHttpRestHandler({
-        layer: { 
-          repo: {},
-          ucase: { userUsecase },
-          delivery: {}
-        },
-        dep: { express },
-        data: {}
+        data: {},
       })
 
-      //initAfter
+      // delivery rest http
+      new UserHttpRestHandler({
+        layer: {
+          repo: {},
+          ucase: {userUsecase},
+          delivery: {},
+        },
+        dep: {express},
+        data: {},
+      })
+
+      // initAfter
       await this.initAfter()
 
       // start/listen express server
@@ -80,9 +79,9 @@ class Main {
     }
   }
 
-  async initAfter(){
+  async initAfter() {
     try {
-      //some init after
+      // some init after
     } catch (e) {
       logger('error', 'main-initAfter', 'error init after', e)
       process.exit()
