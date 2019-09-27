@@ -1,4 +1,4 @@
-import { Router } from 'express'
+import {Router as router} from 'express'
 import logger from '../../../../../utils/logger'
 import error from '../../../../../utils/error'
 import wrapper from '../../../../../utils/wrapper'
@@ -8,7 +8,7 @@ class UserRestHandler {
     const e = params.dep.express
     this.userUsecase = params.layer.ucase.userUsecase
 
-    const user = Router()
+    const user = router()
 
     user.get('/', this.fetch.bind(this))
     user.get('/error', this.makeError.bind(this))

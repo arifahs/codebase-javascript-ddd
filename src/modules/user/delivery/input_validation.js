@@ -8,5 +8,5 @@ const createUser = (data) => {
 }
 
 export default {
-  createUser
+  createUser,
 }
