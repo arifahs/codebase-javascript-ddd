@@ -2,5 +2,6 @@ logs/
 dist/
 .nyc_output/
 .sonarlint/
+.vscode/
 coverage/
 node_modules/
