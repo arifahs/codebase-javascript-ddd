@@ -1,0 +1,90 @@
+{
+  "name": "tms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -s -D -d dist --require babel-polyfill",
+    "dev": "nodemon --exec babel-node src/main.js",
+    "test": "cross-env NODE_ENV=test mocha --require @babel/register \"src/**/*.test.js\" --timeout=5000 --exit",
+    "cover": "cross-env NODE_ENV=test nyc _mocha \"src/**/*.test.js\" --recursive",
+    "lint": "eslint src",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.5.0",
+    "@babel/preset-env": "^7.4.5",
+    "babel-eslint": "^10.0.2",
+    "babel-plugin-istanbul": "^5.1.4",
+    "chai": "^4.2.0",
+    "eslint": "^6.1.0",
+    "eslint-config-google": "^0.13.0",
+    "eslint-plugin-import": "^2.18.2",
+    "mocha": "^6.1.4",
+    "nodemon": "^1.19.1",
+    "nyc": "^14.1.1",
+    "sinon": "^7.3.2"
+  },
+  "dependencies": {
+    "@sentry/node": "^5.4.3",
+    "agenda": "^2.0.2",
+    "apollo-server-express": "^2.6.7",
+    "apollo-server-testing": "^2.7.0",
+    "axios": "^0.19.0",
+    "babel-node": "0.0.1-security",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "chai-http": "^4.3.0",
+    "cross-env": "^5.2.0",
+    "dotenv": "^8.0.0",
+    "escape-string-regexp": "^2.0.0",
+    "express": "^4.17.1",
+    "folder-hash": "^3.1.0",
+    "graphql": "^14.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "log4js": "^4.4.0",
+    "merge-graphql-schemas": "^1.5.8",
+    "mockingoose": "^2.13.1",
+    "mongoose": "^5.6.1",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.3.0",
+    "nodemailer-sendgrid": "^1.0.3",
+    "shuffle-array": "^1.0.1",
+    "sinon-mongoose": "^2.3.0",
+    "uuid": "^3.3.2",
+    "yup": "^0.27.0"
+  },
+  "nyc": {
+    "lines": 10,
+    "statements": 10,
+    "functions": 10,
+    "branches": 10,
+    "sourceMap": false,
+    "instrument": false,
+    "check-coverage": true,
+    "require": [
+      "@babel/register"
+    ],
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "src/**/*.test.js"
+    ],
+    "reporter": [
+      "html",
+      "text",
+      "lcov",
+      "text-summary"
+    ],
+    "all": true,
+    "cache": true,
+    "report-dir": "./coverage"
+  }
+}
