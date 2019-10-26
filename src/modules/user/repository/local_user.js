@@ -14,6 +14,12 @@ class localUserRepository {
       {
         name: 'syafie',
       },
+      {
+        name: 'Amin',
+      },
+      {
+        name: 'udin', // this is my change
+      },
     ]
 
     return users

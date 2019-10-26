@@ -13,7 +13,7 @@ class usersUsecase {
     throw new _error.New(
         _error.message.duplicate,
         {
-          foo: 'some detail',
+          foo: 'some detail in here', // this is my change
         }
     )
   }
